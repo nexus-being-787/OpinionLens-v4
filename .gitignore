@@ -1,0 +1,15 @@
+# Python / Backend
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.DS_Store
+
+# Scraping / Temp files
+playwright-report/
+test-results/my_local_model/model.safetensors

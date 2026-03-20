@@ -1,0 +1,209 @@
+/* --- BASE THEME --- */
+:root {
+  --bg-color: #0e1117;
+  --card-bg: #262730;
+  --text-main: #ffffff;
+  --text-muted: #a0aab8;
+  --accent: #FF4500;
+  --pos-color: #00CC96;
+  --neg-color: #EF553B;
+  --neu-color: #636EFA;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- HEADER --- */
+.header {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-icon {
+  font-size: 3rem;
+}
+
+h1 {
+  color: var(--accent);
+  margin: 0 0 5px 0;
+  font-size: 2.2rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* --- CARDS & FORMS --- */
+.card-dark {
+  background-color: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.search-form {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #1a1c23;
+  color: white;
+}
+
+.btn-primary {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #ff571a;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-alert {
+  margin-top: 15px;
+  color: var(--neg-color);
+  background: rgba(239, 85, 59, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* --- VERDICT SECTION --- */
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.score-metric h3 { margin: 0; color: var(--text-muted); font-size: 1rem;}
+.score-number { font-size: 2.5rem; font-weight: bold; }
+
+.progress-bar-container {
+  flex: 1;
+  height: 25px;
+  background-color: #1a1c23;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+}
+
+/* --- METRICS GRID --- */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.metric-card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.metric-card h4 { margin: 0 0 10px 0; color: var(--text-muted); }
+.metric-card p { margin: 0; font-size: 2rem; font-weight: bold; }
+
+/* --- FEED GRID --- */
+.feed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.review-card {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-text {
+  flex: 1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.review-footer {
+  margin-top: 15px;
+  color: var(--text-muted);
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+/* --- UTILITIES (Colors) --- */
+.text-green { color: var(--pos-color); }
+.text-lightgreen { color: #90ee90; }
+.text-orange { color: #FFA15A; }
+.text-red { color: var(--neg-color); }
+.text-blue { color: var(--neu-color); }
+
+.bg-green { background-color: var(--pos-color); }
+.bg-lightgreen { background-color: #90ee90; }
+.bg-orange { background-color: #FFA15A; }
+.bg-red { background-color: var(--neg-color); }
+
+.border-positive { border-left-color: var(--pos-color); }
+.border-negative { border-left-color: var(--neg-color); }
+.border-neutral { border-left-color: var(--neu-color); }
+
+.badge {
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.badge-positive { background-color: rgba(0, 204, 150, 0.2); color: var(--pos-color); }
+.badge-negative { background-color: rgba(239, 85, 59, 0.2); color: var(--neg-color); }
+.badge-neutral { background-color: rgba(99, 110, 250, 0.2); color: var(--neu-color); }

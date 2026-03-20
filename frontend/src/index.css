@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-darkbg: #0f172a;
+  --color-darkcard: #1e293b;
+  --color-brand: #FF4500;
+  --color-pos: #10b981;
+  --color-neg: #ef4444;
+  --color-neu: #3b82f6;
+}
+
+body {
+  background-color: var(--color-darkbg);
+  color: #f8fafc;
+}

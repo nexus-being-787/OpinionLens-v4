@@ -2,34 +2,90 @@
 
 **Advanced Brand Sentiment & Market Intelligence System**
 
-OpinionLens (aka Reddit Radar AI) is a powerful, web-based intelligence tool that aggregates and analyzes community discussions to provide actionable insights. Built with Python and Streamlit, it evaluates public sentiment on brands, products, and topics using real-time data from Reddit and other sources.
+OpinionLens (aka Reddit Radar AI) is a powerful intelligence tool that aggregates and analyzes community discussions from Reddit and other sources to provide actionable business insights. Built with Python, it includes scrapers, sentiment analysis, result aggregation, and an interactive Streamlit dashboard.
 
 ---
 
 ## ✨ Features
 
-- **🔍 Search Brand:** Instantly scan Reddit for any brand or product (e.g., "iPhone 16", "GTA VI") to gather community feedback.
-- **🔗 Analyze Specific Links:** Deep-dive into specific Reddit post comments or paste text from other platforms (like Instagram) for targeted analysis.
-- **🧠 AI Sentiment Analysis:** Automatically categorizes feedback into Positive, Neutral, or Negative sentiments.
-- **📊 Buy Confidence Score:** Calculates an overall "Buy Score" and provides a clear AI verdict (e.g., "Highly Recommended", "Mixed Feelings", "Avoid").
-- **🔑 Intelligent Reasoning:** Extracts common keywords, themes, and highlights the most helpful community reviews (Pros/Cons).
-- **📈 Interactive Dashboards:** Visualizes community mood and volume using modern Plotly charts.
+- 🔍 Brand / topic search on Reddit (and other sources).
+- 🔗 Optional link-specific analysis via URL / comments text.
+- 🧠 AI sentiment classification (Positive / Neutral / Negative).
+- 📊 Buy Confidence / sentiment report scoring.
+- 🔑 Keyword extraction, themes, and pros/cons summaries.
+- 📈 Dashboard visualizations (Plotly + Streamlit).
+- 🐍 Multiple scraper backends for Amazon, Flipkart, YouTube, Play Store, Reddit, and more.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.8+ (recommend 3.10+)
 - [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (for frontend, optional)
 
 ### Installation
 
-1. **Clone the repository:**
+1. **Clone your repo:**
    ```bash
-   git clone https://github.com/Jaiamar/OpinionLens.git
+   git clone https://github.com/nexus-being-787/OpinionLens-v4.git
    cd OpinionLens
    ```
 
+2. **Create and activate a virtual environment:**
+   ```bash
+   # On Windows
+   python -m venv venv
+   venv\Scripts\activate
+
+   # On macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install Python dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   If `requirements.txt` is missing, install core packages:
+   ```bash
+   pip install streamlit pandas plotly praw requests beautifulsoup4 transformers torch
+   ```
+
+4. **Ignore large local model files** (not pushed to GitHub):
+   - `my_local_model/model.safetensors` excluded due GitHub file size limits.
+
+### Running the Streamlit App
+
+```bash
+streamlit run app.py
+```
+
+Open `http://localhost:8501` in your browser.
+
+---
+
+## 🧩 Additional scripts
+
+- `scraper.py`, `reddit_scraper.py`, `amazon_scraper.py`, `flipkart_scraper.py`, `playstore_scraper.py`, `youtube_scraper.py`, `apify_scraper.py`, `news_engine.py`: scraping engines.
+- `analyzer.py`: sentiment aggregation and scoring.
+- `api.py`: REST API wrapper.
+- `frontend/`: Vue/Vite UI with own package setup.
+
+---
+
+## 📌 Note
+
+- You may need Git LFS for model checkpoints >100MB.
+- For immediate testing without model files, use sample data or disable model-dependent features.
+
+---
+
+## 🛠️ Built With
+
+- Streamlit
+- Plotly
+- Python
 2. **Set up a virtual environment (Recommended):**
    ```bash
    # On Windows
